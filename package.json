@@ -1,8 +1,14 @@
 {
   "name": "svelte-as-markup-preprocessor",
-  "version": "0.1.0",
-  "description": "Removes unwanted whitespace from the markup section of svelte files.",
-  "main": "out/index.js",
+  "version": "0.1.1",
+  "description": "Run any svelte preprocessor to completion in the markup phase",
+  "main": "out/cjs/index.js",
+  "module": "out/esm/index.js",
+  "type":"module",
+  "exports": {
+    "import": "./out/esm/index.js",
+    "require": "./out/cjs/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "run-p preprocess",
@@ -12,12 +18,16 @@
     "clean": "run-p clean:preprocessed",
     "clean:preprocessed": "if [ -d \"./out\" ] ; then rm -r \"./out\"; fi",
     "preprocess": "run-s clean:preprocessed preprocess:typescript",
-    "preprocess:typescript": "tsc",
+    "preprocess:typescript": "run-p preprocess:typescript:esm preprocess:typescript:cjs",
+    "preprocess:typescript:esm": "tsc --module ESNext --outDir \"./out/esm/\"",
+    "preprocess:typescript:cjs": "tsc",
     "prepare": "npm run build",
     "prepublishOnly": "run-p check"
   },
   "keywords": [
-    "svelte"
+    "svelte",
+    "preprocess",
+    "preprocessor"
   ],
   "files": [
     "./out",
@@ -46,5 +56,5 @@
   "peerDependencies": {
     "svelte": "^3.29"
   },
-  "types": "./out/index.d.ts"
+  "types": "./out/esm/index.d.ts"
 }

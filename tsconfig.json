@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "module": "CommonJS",
-    "esModuleInterop": true,
     "moduleResolution": "Node",
+    "esModuleInterop": true,
     "strict": true,
-    "outDir": "./out",
+    "outDir": "./out/cjs",
     "declaration": true,
     "skipLibCheck": true
   },
