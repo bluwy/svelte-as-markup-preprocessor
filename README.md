@@ -14,14 +14,14 @@ module.exports = {
   preprocess: [
     asMarkupPreprocessor([
       sveltePreprocess(),
-      otherPreprocessors
+      someOtherPreprocessor()
     ]),
-      dependentMarkupPreprocessor()
+    dependentMarkupPreprocessor()
   ]
 }
 ```
 
-`asMarkupPreprocessor` is a simple wrapper around [svelte.preprocess](https://svelte.dev/docs#svelte_preprocess), and thus accepts the same arguments as it. If you can put it in [svelte.config.js](https://github.com/sveltejs/language-tools/blob/master/docs/preprocessors/in-general.md)'s `preprocess` field, you can pass it into us.
+`asMarkupPreprocessor` is a simple wrapper around [svelte.preprocess](https://svelte.dev/docs#svelte_preprocess), and accepts the same `preprocessors` array as it. In other words, anything you could put in [svelte.config.js](https://github.com/sveltejs/language-tools/blob/master/docs/preprocessors/in-general.md)'s `preprocess` field, you can pass into us.
 
 
 # Motivation
