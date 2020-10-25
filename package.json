@@ -1,0 +1,50 @@
+{
+  "name": "svelte-as-markup-preprocessor",
+  "version": "0.1.0",
+  "description": "Removes unwanted whitespace from the markup section of svelte files.",
+  "main": "out/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "run-p preprocess",
+    "check": "run-p check:typescript check:eslint",
+    "check:eslint": "eslint \"./src\"",
+    "check:typescript": "tsc --noEmit",
+    "clean": "run-p clean:preprocessed",
+    "clean:preprocessed": "if [ -d \"./out\" ] ; then rm -r \"./out\"; fi",
+    "preprocess": "run-s clean:preprocessed preprocess:typescript",
+    "preprocess:typescript": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "run-p check"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "./out",
+    "./docs"
+  ],
+  "author": "firefish5000",
+  "homepage": "https://github.com/firefish5000/svelte-as-markup-preprocessor#readme",
+  "repository": {
+    "url": "https://github.com/firefish5000/svelte-as-markup-preprocessor.git",
+    "type": "git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@tdi/eslint-config-base": "^0.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "estree-walker": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "svelte": "^3.29.4",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.3"
+  },
+  "peerDependencies": {
+    "svelte": "^3.29"
+  },
+  "types": "./out/index.d.ts"
+}
