@@ -7,14 +7,14 @@
     "strict": true,
     "outDir": "./out/cjs",
     "declaration": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
     "node_modules/**/*",
-    "out/**/*"
+    "out/**/*",
   ],
   "baseUrl": "src"
 }
