@@ -40,17 +40,17 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@tdi/eslint-config-base": "^0.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "@typescript-eslint/parser": "^4.5.0",
-    "eslint": "^7.12.0",
+    "@tdi/eslint-config-base": "^0.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint": "^7.12.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-plugin-import": "^2.22.1",
     "estree-walker": "^2.0.1",
     "npm-run-all": "^4.1.5",
     "svelte": "^3.29.4",
     "tslib": "^2.0.3",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.5"
   },
   "peerDependencies": {
     "svelte": "^3.29"
