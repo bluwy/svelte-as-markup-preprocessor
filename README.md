@@ -9,7 +9,7 @@ To use, simply wrap all preprocessors above the
 the dependent preprocessor like so
 ```js
 // svelte.config.js
-import asMarkupPreprocessor from 'svelte-as-markup-preprocessor'
+import {asMarkupPreprocessor} from 'svelte-as-markup-preprocessor'
 module.exports = {
   preprocess: [
     asMarkupPreprocessor([

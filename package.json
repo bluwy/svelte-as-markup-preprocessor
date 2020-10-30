@@ -1,10 +1,9 @@
 {
   "name": "svelte-as-markup-preprocessor",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Run any svelte preprocessor to completion in the markup phase",
   "main": "out/cjs/index.js",
   "module": "out/esm/index.js",
-  "type":"module",
   "exports": {
     "import": "./out/esm/index.js",
     "require": "./out/cjs/index.js"

@@ -12,7 +12,7 @@ type PreprocessorGroup = Exclude<PreprocessParams[1] ,unknown[]>
  */
 
 // eslint-disable-next-line max-len
-export default function asMarkupPreprocessor(preprocessors: PreprocessorGroup|PreprocessorGroup[]): PreprocessorGroup {
+export function asMarkupPreprocessor(preprocessors: PreprocessorGroup|PreprocessorGroup[]): PreprocessorGroup {
   return {
     async markup({ content ,filename }): Promise<Processed> {
       return preprocess(content ,preprocessors ,{ filename })
